@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math, copy
+import copy
 
 class SSTF(object):
 
@@ -27,7 +27,7 @@ class SSTF(object):
 		best_position = 0
 		for i in range(len(inputs)):
 			# Distancia calculada para cada posicao requerida
-			distance = math.trunc(math.fabs(current_cylinder - inputs[i]))
+			distance = abs(current_cylinder - inputs[i])
 
 			# Verifica se a distancia atualmente calculada e menor que a distancia menor que ja se tem
 			if  distance < shortest_distance:
@@ -48,7 +48,7 @@ class SSTF(object):
 
 			for i in range(len(inputs)):
 				# Distancia calculada para cada posicao requerida
-				distance = math.trunc(math.fabs(current_position - inputs[i]))
+				distance = abs(current_position - inputs[i])
 
 				# Verifica se a distancia atualmente calculada e menor que a distancia menor que ja se tem
 				if distance < shortest_distance:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math, copy
+import  copy
 
 class FCFS(object):
 
@@ -22,12 +22,9 @@ class FCFS(object):
 		current_cylinder = inputs.pop(0)
 
 		# Calcula o primeiro deslocamento do braco do disco
-		self.output += math.fabs(current_cylinder - inputs[0])
+		self.output += abs(current_cylinder - inputs[0])
 		i = 0
 		while i < len(inputs) - 1:
 			# Calcula todos os outros deslocamentos do braco do disco
-			self.output += math.fabs(inputs[i] - inputs[i+1])
+			self.output += abs(inputs[i] - inputs[i+1])
 			i += 1
-
-		# Trunca o valor de saida para o formato esperado
-		self.output = math.trunc(self.output)
